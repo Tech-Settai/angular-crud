@@ -1,0 +1,21 @@
+<form [formGroup]="inputform">
+    <mat-form-field class="example-full-width">
+        <mat-label>Rank</mat-label>
+        <input type="number" matInput formControlName="rank" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Age</mat-label>
+        <input type="number" matInput formControlName="age" >
+    </mat-form-field>
+    <br>
+    <button *ngIf="data.OpenAs === 'add'" mat-raised-button color="primary" (click)="AddUser()" [disabled]="!inputform.valid">Add</button>
+    <button *ngIf="data.OpenAs === 'edit'" mat-raised-button color="primary" (click)="updateUser()" [disabled]="!inputform.valid">Update</button>
+    <button mat-raised-button (click)="ClosePopup()">Close</button>
+</form>
+
+
+
